@@ -6,5 +6,5 @@
     <string name="button_parking_add_size">Add Size</string>
 
     <!-- Uses in ParkingView.java -->
-    <string name="text_parking_add_size_message">Parking lots added: </string>
+    <string name="text_parking_add_size_message">Parking lots added: %s</string>
 </resources>
