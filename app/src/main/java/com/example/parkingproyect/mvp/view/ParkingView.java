@@ -2,6 +2,9 @@ package com.example.parkingproyect.mvp.view;
 
 import android.app.Activity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.parkingproyect.databinding.ActivityMainBinding;
 
@@ -14,18 +17,17 @@ public class ParkingView extends ActivityView {
        this.binding = binding;
     }
 
-    public int getSize(){
-        int size = 0;
-        try{
-            size = Integer.parseInt(binding.quantityParkingSlots.getText().toString());
-        }
-        catch(NumberFormatException ex){
-            Log.e(ParkingView.class.getSimpleName(), ex.toString());
-        }
+    public String getSize(){
+        String size = "";
+        size = binding.quantityParkingSlots.getText().toString();
         return size;
     }
 
-    public void setSize(String size) {
+    public void showSizeMessage(String size) {
         binding.sizeLabel.setText("Parking lots added: " + size);
+    }
+
+    public void showInvalidError() {
+        Toast.makeText(getContext(),"Error: " + getSize(),Toast.LENGTH_LONG).show();
     }
 }

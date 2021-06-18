@@ -2,9 +2,6 @@ package com.example.parkingproyect;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.example.parkingproyect.databinding.ActivityMainBinding;
 import com.example.parkingproyect.mvp.model.Parking;
@@ -28,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setListeners(){
-
         binding.addsizeButton.setOnClickListener(view -> {
             presenter.onSizeCreationButtonPressed();
         });

@@ -1,5 +1,9 @@
 package com.example.parkingproyect.mvp.model;
 
+import android.util.Log;
+
+import com.example.parkingproyect.mvp.view.ParkingView;
+
 import java.util.ArrayList;
 
 public class Parking {
@@ -12,10 +16,11 @@ public class Parking {
     }
 
     public int getParkingSize() {
-        return parkingSize;
+            return parkingSize;
     }
 
-    public void setParkingSize(int newParkingSize){
-        this.parkingSize = newParkingSize;
+    public void setParkingSize(String newParkingSize) throws NumberFormatException{
+            this.parkingSize = Integer.parseInt(newParkingSize);
     }
+
 }

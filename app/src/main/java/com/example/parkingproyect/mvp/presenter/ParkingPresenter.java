@@ -1,5 +1,7 @@
 package com.example.parkingproyect.mvp.presenter;
 
+import android.util.Log;
+
 import com.example.parkingproyect.mvp.model.Parking;
 import com.example.parkingproyect.mvp.view.ParkingView;
 
@@ -14,10 +16,17 @@ public class ParkingPresenter {
       }
 
       public void onSizeCreationButtonPressed(){
-          //Declaro la variable int para dejarlo mas claro
-          int size = parkingView.getSize();
-          parking.setParkingSize(size);
-          parkingView.setSize(String.valueOf(parking.getParkingSize()));
+          //Declaro la variable string para dejarlo mas claro
+          String size = parkingView.getSize();
+          try {
+              parking.setParkingSize(size);
+              parkingView.showSizeMessage(String.valueOf(size));
+          }
+          catch(NumberFormatException ex){
+              Log.e(ParkingPresenter.class.getSimpleName(), ex.toString());
+              parkingView.showInvalidError();
+          }
+
       }
 
 }
