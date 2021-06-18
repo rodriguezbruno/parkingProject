@@ -16,7 +16,7 @@ public class ParkingPresenter {
       }
 
       public void onSizeCreationButtonPressed(){
-          //Declaro la variable string para dejarlo mas claro
+          //I declare the string variable to make it more clear
           String size = parkingView.getSize();
           try {
               parking.setParkingSize(size);

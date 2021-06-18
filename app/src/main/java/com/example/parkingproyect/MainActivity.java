@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setListeners(){
-        binding.addsizeButton.setOnClickListener(view -> {
+        binding.buttonParkingAddSize.setOnClickListener(view -> {
             presenter.onSizeCreationButtonPressed();
         });
     }

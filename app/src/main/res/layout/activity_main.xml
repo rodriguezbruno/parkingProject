@@ -8,30 +8,30 @@ android:orientation="vertical">
 
 
     <TextView
-        android:id="@+id/parking_size_label"
+        android:id="@+id/text_parking_size_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Parking Size"/>
+        android:text="@string/text_parking_size_text"/>
 
 
     <EditText
-        android:id="@+id/quantity_parking_slots"
+        android:id="@+id/input_parking_quantity_slots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Size..."
+        android:hint="@string/input_parking_size_hint"
         android:inputType="number"
         android:layout_marginTop="25dp"/>
 
     <TextView
-    android:id="@+id/size_label"
+    android:id="@+id/text_parking_message"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textSize="25sp"/>
 
     <Button
-        android:id="@+id/addsize_button"
+        android:id="@+id/button_parking_add_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Size" />
+        android:text="@string/button_parking_add_size" />
 
 </LinearLayout>

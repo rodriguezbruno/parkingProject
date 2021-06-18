@@ -1,3 +1,10 @@
 <resources>
+     <!-- Uses in activity_main.xml -->
     <string name="app_name">ParkingProyect</string>
+    <string name="text_parking_size_text">Parking Size</string>
+    <string name="input_parking_size_hint">Size...</string>
+    <string name="button_parking_add_size">Add Size</string>
+
+    <!-- Uses in ParkingView.java -->
+    <string name="text_parking_add_size_message">Parking lots added: </string>
 </resources>
