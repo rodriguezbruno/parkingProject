@@ -22,7 +22,6 @@ public class ParkingView extends ActivityView {
 
     public void showSizeMessage(String size){
         binding.textParkingMessage.setText(getContext().getString(R.string.text_parking_add_size_message, size));
-        binding.textParkingMessage.setText("Parking lots added: " + size);
     }
 
     public void showInvalidError() {
