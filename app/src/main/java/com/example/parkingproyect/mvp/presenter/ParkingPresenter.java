@@ -5,25 +5,25 @@ import com.example.parkingproyect.mvp.view.ParkingView;
 
 public class ParkingPresenter {
 
-      private Parking parking;
-      private ParkingView parkingView;
+    private Parking parking;
+    private ParkingView parkingView;
 
-      public ParkingPresenter(Parking parking, ParkingView parkingView){
-             this.parking = parking;
-             this.parkingView = parkingView;
-      }
+    public ParkingPresenter(Parking parking, ParkingView parkingView) {
+        this.parking = parking;
+        this.parkingView = parkingView;
+    }
 
-      public void onSizeCreationButtonPressed(){
-          //Declare the string variable to make it more clear
-          String size = parkingView.getSize();
-          try {
-              parking.setParkingSize(size);
-              parkingView.showSizeMessage(String.valueOf(size));
-          }
-          catch(NumberFormatException ex){
-              parkingView.showInvalidError();
-          }
-
-      }
-
+    public void onSizeCreationButtonPressed() {
+        String size = parkingView.getSize();
+        try {
+            if (Integer.parseInt(size) <= 0) {
+                parkingView.showErrorMessage();
+            } else {
+                parking.setParkingSize(size);
+                parkingView.showSizeMessage(size);
+            }
+        } catch (NumberFormatException ex) {
+            parkingView.showInvalidError();
+        }
+    }
 }

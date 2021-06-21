@@ -20,6 +20,13 @@ public class ParkingView extends ActivityView {
         return size;
     }
 
+
+    public void showErrorMessage() {
+        if (getContext() != null) {
+            Toast.makeText(getContext(), "Number less than or equal to 0", Toast.LENGTH_LONG).show();
+        }
+    }
+
     public void showSizeMessage(String size) {
         if (getContext() != null) {
             binding.textParkingMessage.setText(getContext().getString(R.string.text_parking_add_size_message, size));
@@ -27,6 +34,7 @@ public class ParkingView extends ActivityView {
     }
 
     public void showInvalidError() {
-        Toast.makeText(getContext(), "Error: " + getSize(), Toast.LENGTH_LONG).show();
+        if (getContext() != null)
+            Toast.makeText(getContext(), "Error: " + getSize(), Toast.LENGTH_LONG).show();
     }
 }

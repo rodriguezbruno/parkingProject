@@ -49,4 +49,13 @@ public class ParkingPresenterTest {
         verify(view, never()).showSizeMessage(any());
     }
 
+    @Test
+    public void isShouldAddParkingSizeLessOrEqual0() {
+        // Given
+        when(view.getSize()).thenReturn("0");
+        // When
+        presenter.onSizeCreationButtonPressed();
+        // Then
+        verify(view).showErrorMessage();
+    }
 }

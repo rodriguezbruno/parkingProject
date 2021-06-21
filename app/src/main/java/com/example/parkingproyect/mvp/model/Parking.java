@@ -18,5 +18,4 @@ public class Parking {
     public void setParkingSize(String newParkingSize) throws NumberFormatException {
         this.parkingSize = Integer.parseInt(newParkingSize);
     }
-
 }
