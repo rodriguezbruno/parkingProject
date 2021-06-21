@@ -16,14 +16,12 @@ public class ParkingPresenter {
     public void onSizeCreationButtonPressed() {
         String size = parkingView.getSize();
         try {
-            if (Integer.parseInt(size) <= 0) {
-                parkingView.showErrorMessage();
-            } else {
-                parking.setParkingSize(size);
-                parkingView.showSizeMessage(size);
-            }
+            parking.setParkingSize(size);
+            parkingView.showSizeMessage(size);
         } catch (NumberFormatException ex) {
             parkingView.showInvalidError();
+        } catch (IllegalArgumentException ex) {
+            parkingView.showErrorMessage();
         }
     }
 }

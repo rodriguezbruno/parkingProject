@@ -53,9 +53,12 @@ public class ParkingPresenterTest {
     public void isShouldAddParkingSizeLessOrEqual0() {
         // Given
         when(view.getSize()).thenReturn("0");
+        doThrow(new IllegalArgumentException()).when(model).setParkingSize("0");
         // When
         presenter.onSizeCreationButtonPressed();
         // Then
         verify(view).showErrorMessage();
+        verify(view, never()).showSizeMessage(any());
     }
+
 }

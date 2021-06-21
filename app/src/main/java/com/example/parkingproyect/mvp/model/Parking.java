@@ -16,6 +16,10 @@ public class Parking {
     }
 
     public void setParkingSize(String newParkingSize) throws NumberFormatException {
-        this.parkingSize = Integer.parseInt(newParkingSize);
+        int parseSize = Integer.parseInt(newParkingSize);
+        if (parseSize <= 0) {
+            throw new IllegalArgumentException();
+        }
+        this.parkingSize = parseSize;
     }
 }
