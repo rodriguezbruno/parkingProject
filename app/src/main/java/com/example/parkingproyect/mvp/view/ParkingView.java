@@ -10,23 +10,22 @@ public class ParkingView extends ActivityView {
 
     private final ActivityMainBinding binding;
 
-    public ParkingView(Activity activity, ActivityMainBinding binding){
-       super(activity);
-       this.binding = binding;
+    public ParkingView(Activity activity, ActivityMainBinding binding) {
+        super(activity);
+        this.binding = binding;
     }
 
-    public String getSize(){
-        String size = binding.inputParkingQuantitySlots.getText().toString();
-        return size;
+    public String getSize() {
+        return binding.inputParkingQuantitySlots.getText().toString();
     }
 
-    public void showSizeMessage(String size){
-        if(getContext() != null)
-        binding.textParkingMessage.setText(getContext().getString(R.string.text_parking_add_size_message, size));
+    public void showSizeMessage(String size) {
+        if (getContext() != null)
+            binding.textParkingMessage.setText(getContext().getString(R.string.text_parking_add_size_message, size));
     }
 
     public void showInvalidError() {
-        if(getContext() != null)
-        Toast.makeText(getContext(),"Error: " + getSize(),Toast.LENGTH_LONG).show();
+        if (getContext() != null)
+            Toast.makeText(getContext(), "Error: " + getSize(), Toast.LENGTH_LONG).show();
     }
 }
