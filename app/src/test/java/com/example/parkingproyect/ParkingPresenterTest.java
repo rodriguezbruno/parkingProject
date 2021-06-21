@@ -50,7 +50,8 @@ public class ParkingPresenterTest {
     }
 
     @Test
-    public void isShouldAddParkingSizeLessOrEqual0() {
+    //method - condition - result
+    public void onSizeCreationButtonPress_sizeLessOrEqual_showErrorMessage() {
         // Given
         when(view.getSize()).thenReturn("0");
         doThrow(new IllegalArgumentException()).when(model).setParkingSize("0");
