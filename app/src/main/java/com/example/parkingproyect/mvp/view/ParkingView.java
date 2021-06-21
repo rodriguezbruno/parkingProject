@@ -21,10 +21,12 @@ public class ParkingView extends ActivityView {
     }
 
     public void showSizeMessage(String size){
+        if(getContext() != null)
         binding.textParkingMessage.setText(getContext().getString(R.string.text_parking_add_size_message, size));
     }
 
     public void showInvalidError() {
+        if(getContext() != null)
         Toast.makeText(getContext(),"Error: " + getSize(),Toast.LENGTH_LONG).show();
     }
 }
