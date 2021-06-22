@@ -7,7 +7,7 @@ public class Reservation {
     public int idReservation;
     public ParkingLot parkingLot;
     public Date startDateTime;
-    public Date finishDateTime;
+    public Date endDateTime;
     public String securityCode;
 
     public int getIdReservation() {
@@ -35,11 +35,11 @@ public class Reservation {
     }
 
     public Date getFinishDateTime() {
-        return finishDateTime;
+        return endDateTime;
     }
 
     public void setFinishDateTime(Date finishDateTime) {
-        this.finishDateTime = finishDateTime;
+        this.endDateTime = finishDateTime;
     }
 
     public String getSecurityCode() {
