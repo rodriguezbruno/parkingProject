@@ -30,15 +30,15 @@ public class ParkingView extends ActivityView {
         }
     }
 
-    public void showInvalidError() {
+    public void showErrorLargeNumber() {
         if (context != null) {
-            Toast.makeText(context, R.string.toast_parking_error_message1 + getSize(), Toast.LENGTH_LONG).show();
+            Toast.makeText(context, R.string.toast_parking_error_large_number + getSize(), Toast.LENGTH_LONG).show();
         }
     }
 
-    public void showErrorMessage() {
+    public void showErrorLessEqual0() {
         if (context != null) {
-            Toast.makeText(context, R.string.toast_parking_error_message2, Toast.LENGTH_LONG).show();
+            Toast.makeText(context, R.string.toast_parking_error_less_equal_0, Toast.LENGTH_LONG).show();
         }
     }
 }

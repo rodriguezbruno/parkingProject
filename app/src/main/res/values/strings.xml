@@ -7,6 +7,6 @@
 
     <!-- Uses in ParkingView.java -->
     <string name="text_parking_add_size_message">Parking lots added: %s</string>
-    <string name="toast_parking_error_message1">Large number error: %s</string>
-    <string name="toast_parking_error_message2">Number less than or equal to 0</string>
+    <string name="toast_parking_error_large_number">Large number error: %s</string>
+    <string name="toast_parking_error_less_equal_0">Number less than or equal to 0</string>
 </resources>

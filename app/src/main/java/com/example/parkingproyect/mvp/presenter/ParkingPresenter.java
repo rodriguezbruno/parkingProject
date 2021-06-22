@@ -19,9 +19,9 @@ public class ParkingPresenter {
             parking.setParkingSize(size);
             parkingView.showSizeMessage(size);
         } catch (NumberFormatException ex) {
-            parkingView.showInvalidError();
+            parkingView.showErrorLargeNumber();
         } catch (IllegalArgumentException ex) {
-            parkingView.showErrorMessage();
+            parkingView.showErrorLessEqual0();
         }
     }
 }

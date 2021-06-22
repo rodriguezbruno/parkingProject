@@ -45,7 +45,7 @@ public class ParkingPresenterTest {
         // When
         presenter.onSizeCreationButtonPressed();
         // Then
-        verify(view).showInvalidError();
+        verify(view).showErrorLargeNumber();
         verify(view, never()).showSizeMessage(any());
     }
 
@@ -58,7 +58,7 @@ public class ParkingPresenterTest {
         // When
         presenter.onSizeCreationButtonPressed();
         // Then
-        verify(view).showErrorMessage();
+        verify(view).showErrorLessEqual0();
         verify(view, never()).showSizeMessage(any());
     }
 
