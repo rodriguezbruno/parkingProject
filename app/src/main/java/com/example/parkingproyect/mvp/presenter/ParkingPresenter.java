@@ -1,29 +1,28 @@
 package com.example.parkingproyect.mvp.presenter;
 
-import com.example.parkingproyect.mvp.model.Parking;
+import com.example.parkingproyect.mvp.model.ParkingModel;
 import com.example.parkingproyect.mvp.view.ParkingView;
 
 public class ParkingPresenter {
 
-    private Parking parking;
-    private ParkingView parkingView;
+    private final ParkingModel parkingModel;
+    private final ParkingView parkingView;
 
-    public ParkingPresenter(Parking parking, ParkingView parkingView) {
-        this.parking = parking;
+    public ParkingPresenter(ParkingModel parkingModel, ParkingView parkingView) {
+        this.parkingModel = parkingModel;
         this.parkingView = parkingView;
     }
 
     public void onSizeCreationButtonPressed() {
         String size = parkingView.getSize();
         try {
-            if (Integer.parseInt(size) <= 0) {
-                parkingView.showErrorMessage();
-            } else {
-                parking.setParkingSize(size);
-                parkingView.showSizeMessage(size);
-            }
+            parkingModel.setParkingSize(size);
+            int sizeInt = parkingModel.getParkingSize();
+            parkingView.navigateToMainMenuActivity(sizeInt);
         } catch (NumberFormatException ex) {
-            parkingView.showInvalidError();
+            parkingView.showErrorLargeNumber();
+        } catch (IllegalArgumentException ex) {
+            parkingView.showErrorLessEqual0();
         }
     }
 }

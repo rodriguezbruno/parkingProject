@@ -1,27 +1,25 @@
 package com.example.parkingproyect;
 
-import com.example.parkingproyect.mvp.model.Parking;
+import com.example.parkingproyect.mvp.model.ParkingModel;
 import com.example.parkingproyect.mvp.presenter.ParkingPresenter;
 import com.example.parkingproyect.mvp.view.ParkingView;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class ParkingPresenterTest {
     private ParkingPresenter presenter;
-    private Parking model;
+    private ParkingModel model;
     private ParkingView view;
 
     @Before
     public void setup() {
-        model = mock(Parking.class);
+        model = mock(ParkingModel.class);
         view = mock(ParkingView.class);
         presenter = new ParkingPresenter(model, view);
     }
@@ -30,11 +28,12 @@ public class ParkingPresenterTest {
     public void isShouldAddParkingSize() {
         // Given
         when(view.getSize()).thenReturn("20");
+        when(model.getParkingSize()).thenReturn(20);
         // When
         presenter.onSizeCreationButtonPressed();
         // Then
         verify(model).setParkingSize("20");
-        verify(view).showSizeMessage("20");
+        verify(view).navigateToMainMenuActivity(20);
     }
 
     @Test
@@ -45,17 +44,18 @@ public class ParkingPresenterTest {
         // When
         presenter.onSizeCreationButtonPressed();
         // Then
-        verify(view).showInvalidError();
-        verify(view, never()).showSizeMessage(any());
+        verify(view).showErrorLargeNumber();
     }
 
     @Test
-    public void isShouldAddParkingSizeLessOrEqual0() {
+    //method - condition - result
+    public void onSizeCreationButtonPress_sizeLessOrEqual_showErrorMessage() {
         // Given
         when(view.getSize()).thenReturn("0");
+        doThrow(new IllegalArgumentException()).when(model).setParkingSize("0");
         // When
         presenter.onSizeCreationButtonPressed();
         // Then
-        verify(view).showErrorMessage();
+        verify(view).showErrorLessEqual0();
     }
 }

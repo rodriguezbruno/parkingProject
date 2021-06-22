@@ -1,10 +1,35 @@
 <resources>
-     <!-- Uses in activity_main.xml -->
+    <!-- Uses in activity_parking.xml -->
     <string name="app_name">ParkingProyect</string>
     <string name="text_parking_size_text">Parking Size</string>
     <string name="input_parking_size_hint">Size...</string>
     <string name="button_parking_add_size">Add Size</string>
 
+    <!-- Uses in activity_system.xml -->
+    <string name="button_parking_reservation">Lot reservation</string>
+    <string name="button_parking_release">Lot release</string>
+    <string name="button_parking_automatic_release">Automatic release</string>
+
+    <!-- Uses in fragment_reservation.xml -->
+    <string name="text_parking_quantity_text">Parking lots: </string>
+    <string name="input_parking_lot_number_hint">Lot number</string>
+    <string name="input_security_code_hint">Security code</string>
+    <string name="date_start_datetime_hint">Start date</string>
+    <string name="date_end_datetime_hint">End date</string>
+    <string name="button_parking_add_new_reservation_text">Add reservation</string>
+
     <!-- Uses in ParkingView.java -->
     <string name="text_parking_add_size_message">Parking lots added: %s</string>
+    <string name="toast_parking_error_large_number">Large number error: %s</string>
+    <string name="toast_parking_error_less_equal_0">Number less than or equal to 0</string>
+
+    <!-- Uses in ReservationView.java -->
+    <string name="toast_reservation_error_null_number_security_code">Security code can not be null</string>
+    <string name="toast_reservation_error_range_number_security_code">Security code length should be between 3 / 5 characters</string>
+    <string name="toast_reservation_error_parking_lot_less_or_equals_0">Parking number should be bigger than 0</string>
+    <string name="toast_reservation_error_range_number_parking_lot">Parking number not exits in parking </string>
+    <string name="toast_reservation_error_dates_empty">Start date or end date are empty</string>
+    <string name="toast_reservation_error_range_dates">Start date is less than the day date or end date is less than start date</string>
+    <string name="toast_reservation_added_message">Reservation added successfully </string>
+    <string name="toast_reservation_added_error_message">Error we have a reservation for that parking number with same date, choose another date for that parking number</string>
 </resources>

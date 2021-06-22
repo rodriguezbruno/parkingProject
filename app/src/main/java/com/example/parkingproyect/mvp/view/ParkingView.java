@@ -1,40 +1,45 @@
 package com.example.parkingproyect.mvp.view;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.widget.Toast;
 
 import com.example.parkingproyect.R;
-import com.example.parkingproyect.databinding.ActivityMainBinding;
+import com.example.parkingproyect.activities.MenuActivity;
+import com.example.parkingproyect.databinding.ActivityParkingBinding;
+
+import static com.example.parkingproyect.activities.MenuActivity.PARKING_SIZE_KEY;
 
 public class ParkingView extends ActivityView {
 
-    private final ActivityMainBinding binding;
+    private final ActivityParkingBinding binding;
 
-    public ParkingView(Activity activity, ActivityMainBinding binding) {
+    public ParkingView(Activity activity, ActivityParkingBinding binding) {
         super(activity);
         this.binding = binding;
     }
 
     public String getSize() {
-        String size = binding.inputParkingQuantitySlots.getText().toString();
-        return size;
+        return binding.inputParkingQuantitySlots.getText().toString();
     }
 
-
-    public void showErrorMessage() {
+    public void navigateToMainMenuActivity(int parkingSize) {
         if (getContext() != null) {
-            Toast.makeText(getContext(), "Number less than or equal to 0", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(getContext(), MenuActivity.class);
+            intent.putExtra(PARKING_SIZE_KEY, parkingSize);
+            getContext().startActivity(intent);
         }
     }
 
-    public void showSizeMessage(String size) {
+    public void showErrorLargeNumber() {
         if (getContext() != null) {
-            binding.textParkingMessage.setText(getContext().getString(R.string.text_parking_add_size_message, size));
+            Toast.makeText(getContext(), R.string.toast_parking_error_large_number + getSize(), Toast.LENGTH_LONG).show();
         }
     }
 
-    public void showInvalidError() {
-        if (getContext() != null)
-            Toast.makeText(getContext(), "Error: " + getSize(), Toast.LENGTH_LONG).show();
+    public void showErrorLessEqual0() {
+        if (getContext() != null) {
+            Toast.makeText(getContext(), R.string.toast_parking_error_less_equal_0, Toast.LENGTH_LONG).show();
+        }
     }
 }
