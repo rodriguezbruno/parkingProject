@@ -15,4 +15,15 @@ public class ParkingModel {
         }
         this.parkingSize = parseSize;
     }
+
+    public boolean addNewReservation(Reservation reservation) {
+        if (reservation == null) {
+            return false;
+        }
+        if (reservation.getParkingLot() <= getParkingSize()) {
+            this.reservationsList.add(reservation);
+        }
+        return true;
+    }
+
 }

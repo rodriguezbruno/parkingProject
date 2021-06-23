@@ -4,26 +4,18 @@ import java.util.Date;
 
 public class Reservation {
 
-    public int idReservation;
-    public ParkingLot parkingLot;
+    public String securityCode;
     public Date startDateTime;
     public Date endDateTime;
-    public String securityCode;
+    public int parkingLot;
 
-    public int getIdReservation() {
-        return idReservation;
+
+    public String getSecurityCode() {
+        return securityCode;
     }
 
-    public void setIdReservation(int idReservation) {
-        this.idReservation = idReservation;
-    }
-
-    public ParkingLot getParkingLot() {
-        return parkingLot;
-    }
-
-    public void setParkingLot(ParkingLot parkingLot) {
-        this.parkingLot = parkingLot;
+    public void setSecurityCode(String securityCode) {
+        this.securityCode = securityCode;
     }
 
     public Date getStartDateTime() {
@@ -34,19 +26,19 @@ public class Reservation {
         this.startDateTime = startDateTime;
     }
 
-    public Date getFinishDateTime() {
+    public Date getEndDateTime() {
         return endDateTime;
     }
 
-    public void setFinishDateTime(Date finishDateTime) {
-        this.endDateTime = finishDateTime;
+    public void setEndDateTime(Date endDateTime) {
+        this.endDateTime = endDateTime;
     }
 
-    public String getSecurityCode() {
-        return securityCode;
+    public int getParkingLot() {
+        return parkingLot;
     }
 
-    public void setSecurityCode(String securityCode) {
-        this.securityCode = securityCode;
+    public void setParkingLot(int parkingLot) {
+        this.parkingLot = parkingLot;
     }
 }
