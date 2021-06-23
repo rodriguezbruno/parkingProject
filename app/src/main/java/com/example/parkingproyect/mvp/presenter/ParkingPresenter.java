@@ -15,14 +15,14 @@ public class ParkingPresenter {
     }
 
     public void onSizeCreationButtonPressed() {
-        //I declare the string variable to make it more clear
         String size = parkingView.getSize();
         try {
             parking.setParkingSize(size);
-            parkingView.showSizeMessage(String.valueOf(size));
+            parkingView.showSizeMessage(size);
         } catch (NumberFormatException ex) {
-            Log.e(ParkingPresenter.class.getSimpleName(), ex.toString());
-            parkingView.showInvalidError();
+            parkingView.showErrorLargeNumber();
+        } catch (IllegalArgumentException ex) {
+            parkingView.showErrorLessEqual0();
         }
     }
 }
