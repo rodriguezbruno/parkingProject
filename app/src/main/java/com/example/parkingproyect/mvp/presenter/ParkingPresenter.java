@@ -1,5 +1,6 @@
 package com.example.parkingproyect.mvp.presenter;
 
+import android.util.Log;
 import com.example.parkingproyect.mvp.model.Parking;
 import com.example.parkingproyect.mvp.view.ParkingView;
 

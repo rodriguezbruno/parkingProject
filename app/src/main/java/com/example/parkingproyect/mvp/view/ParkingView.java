@@ -18,9 +18,9 @@ public class ParkingView extends ActivityView {
         this.context = getContext();
     }
 
+
     public String getSize() {
-        String size = binding.inputParkingQuantitySlots.getText().toString();
-        return size;
+        return binding.inputParkingQuantitySlots.getText().toString();
     }
 
 
@@ -41,4 +41,5 @@ public class ParkingView extends ActivityView {
             Toast.makeText(context, R.string.toast_parking_error_less_equal_0, Toast.LENGTH_LONG).show();
         }
     }
+
 }

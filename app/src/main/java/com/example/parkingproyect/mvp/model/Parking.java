@@ -1,7 +1,5 @@
 package com.example.parkingproyect.mvp.model;
 
-import java.util.ArrayList;
-
 public class Parking {
 
     private int parkingSize;
