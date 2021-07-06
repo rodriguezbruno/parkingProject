@@ -2,13 +2,17 @@ package com.example.parkingproyect;
 
 import com.example.parkingproyect.entities.Parking;
 import com.example.parkingproyect.entities.Reservation;
+import com.example.parkingproyect.mvp.model.ParkingModel;
 import com.example.parkingproyect.mvp.model.ReservationModel;
+import com.example.parkingproyect.mvp.presenter.ParkingPresenter;
 import com.example.parkingproyect.mvp.presenter.ReservationPresenter;
+import com.example.parkingproyect.mvp.view.ParkingView;
 import com.example.parkingproyect.mvp.view.ReservationView;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import static org.junit.Assert.assertThrows;
@@ -32,13 +36,18 @@ public class ParkingReservationTest {
         presenter = new ReservationPresenter(model, view);
     }
 
-
     @Test
     public void onSchedule_addReservation_success() {
         ReservationPresenter spyPresenter = spy(presenter);
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_YEAR, 1);
+        Date startDate = calendar.getTime();
+        calendar.add(Calendar.DAY_OF_YEAR, 1);
+        Date endDate = calendar.getTime();
+
         // Given
-        when(view.getStartDate()).thenReturn(new Date());
-        when(view.getEndDate()).thenReturn(new Date());
+        when(view.getStartDate()).thenReturn(startDate);
+        when(view.getEndDate()).thenReturn(endDate);
         when(view.getParkingLotNumber()).thenReturn("15");
         when(view.getSecurityCode()).thenReturn("A123");
 
@@ -46,16 +55,14 @@ public class ParkingReservationTest {
 
         when(spyPresenter.validateSecurityCode("A123")).thenReturn(true);
         when(spyPresenter.validateParkingLot(15)).thenReturn(true);
-        when(spyPresenter.validateReservationDates(any(),any())).thenReturn(true);
+        when(spyPresenter.validateReservationDates(startDate.getTime(),endDate.getTime())).thenReturn(true);
 
         when(model.addReservation(any(Reservation.class))).thenReturn(true);
 
-        spyPresenter.onClickAddNewReservation();
+        spyPresenter.onAddNewReservationPressed();
 
         verify(view).showSuccessMessageReservationAdded();
     }
-
-
 
    /*
     @Test
