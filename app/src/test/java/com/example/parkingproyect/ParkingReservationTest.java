@@ -23,7 +23,6 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(RobolectricTestRunner.class)
-
 public class ParkingReservationTest {
     private ReservationPresenter presenter;
     private ReservationModel model;
@@ -62,6 +61,7 @@ public class ParkingReservationTest {
         when(view.getEndDate()).thenReturn(endDate);
         when(view.getParkingLotNumber()).thenReturn("15");
         when(view.getSecurityCode()).thenReturn("A123");
+
         when(model.getParkingNumber("15")).thenReturn(15);
 
         when(model.getParking()).thenReturn(new Parking(16));
