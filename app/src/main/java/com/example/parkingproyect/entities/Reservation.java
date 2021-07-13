@@ -3,8 +3,6 @@ package com.example.parkingproyect.entities;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.Date;
-
 public class Reservation implements Parcelable {
 
     public String securityCode;
