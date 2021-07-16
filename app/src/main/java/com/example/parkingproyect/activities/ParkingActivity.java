@@ -1,25 +1,25 @@
-package com.example.parkingproyect;
+package com.example.parkingproyect.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.parkingproyect.databinding.ActivityMainBinding;
-import com.example.parkingproyect.mvp.model.Parking;
+import com.example.parkingproyect.databinding.ActivityParkingBinding;
+import com.example.parkingproyect.mvp.model.ParkingModel;
 import com.example.parkingproyect.mvp.presenter.ParkingPresenter;
 import com.example.parkingproyect.mvp.view.ParkingView;
 
-public class MainActivity extends AppCompatActivity {
+public class ParkingActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
+    private ActivityParkingBinding binding;
     private ParkingPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityParkingBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        presenter = new ParkingPresenter(new Parking(), new ParkingView(this, binding));
+        presenter = new ParkingPresenter(new ParkingModel(), new ParkingView(this, binding));
         setListeners();
     }
 

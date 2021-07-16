@@ -1,13 +1,8 @@
 package com.example.parkingproyect.mvp.model;
 
-public class Parking {
+public class ParkingModel {
 
     private int parkingSize;
-    private ArrayList<ParkingLot> parkingLotList;
-
-    public Parking() {
-        this.parkingLotList = new ArrayList<>();
-    }
 
     public int getParkingSize() {
         return parkingSize;
