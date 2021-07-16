@@ -1,7 +1,6 @@
 package com.example.parkingproyect.mvp.view;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
@@ -19,7 +18,6 @@ public class ParkingView extends ActivityView {
         super(activity);
         this.binding = binding;
     }
-
 
     public String getSize() {
         return binding.inputParkingQuantitySlots.getText().toString();
@@ -44,5 +42,4 @@ public class ParkingView extends ActivityView {
             Toast.makeText(getContext(), R.string.toast_parking_error_less_equal_0, Toast.LENGTH_LONG).show();
         }
     }
-
 }

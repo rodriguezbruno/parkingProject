@@ -7,7 +7,6 @@ import com.example.parkingproyect.databinding.FragmentReservationBinding;
 import com.example.parkingproyect.utils.Picker;
 
 import java.util.Date;
-import java.util.Objects;
 
 public class ReservationView extends FragmentView {
 
@@ -47,34 +46,34 @@ public class ReservationView extends FragmentView {
     }
 
     public void showErrorSecurityCodeNull() {
-        showToast(Objects.requireNonNull(getContext()).getString(R.string.toast_reservation_error_null_number_security_code));
+        showToast(R.string.toast_reservation_error_null_number_security_code);
     }
 
     public void showErrorSecurityCodeOutOfNumberRange() {
-        showToast(Objects.requireNonNull(getContext()).getString(R.string.toast_reservation_error_range_number_security_code));
+        showToast(R.string.toast_reservation_error_range_number_security_code);
     }
 
     public void showErrorParkingNumberOutOfRange() {
-        showToast(Objects.requireNonNull(getContext()).getString(R.string.toast_reservation_error_range_number_parking_lot));
+        showToast(R.string.toast_reservation_error_range_number_parking_lot);
     }
 
     public void showErrorDatesOutOfRange() {
-        showToast(Objects.requireNonNull(getContext()).getString(R.string.toast_reservation_error_range_dates));
+        showToast(R.string.toast_reservation_error_range_dates);
     }
 
     public void showErrorParkingNumberWithSameDates() {
-        showToast(Objects.requireNonNull(getContext()).getString(R.string.toast_reservation_added_error_message));
+        showToast(R.string.toast_reservation_added_error_message);
     }
 
     public void showSuccessMessageReservationAdded() {
-        showToast(Objects.requireNonNull(getContext()).getString(R.string.toast_reservation_added_message));
+        showToast(R.string.toast_reservation_added_message);
     }
 
     public void showErrorParkingLotLessOrEqualsTo0() {
-        showToast(Objects.requireNonNull(getContext()).getString(R.string.toast_reservation_error_parking_lot_less_or_equals_0));
+        showToast(R.string.toast_reservation_error_parking_lot_less_or_equals_0);
     }
 
     public void showErrorReservationDatesEmpty() {
-        showToast(Objects.requireNonNull(getContext()).getString(R.string.toast_reservation_error_dates_empty));
+        showToast(R.string.toast_reservation_error_dates_empty);
     }
 }

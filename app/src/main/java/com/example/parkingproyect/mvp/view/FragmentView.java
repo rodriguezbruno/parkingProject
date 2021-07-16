@@ -8,6 +8,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.parkingproyect.R;
+
 import java.lang.ref.WeakReference;
 
 public class FragmentView {
@@ -41,10 +43,10 @@ public class FragmentView {
         return (activity != null) ? activity.getFragmentManager() : null;
     }
 
-    public void showToast(String text) {
+    public void showToast(int mensajeInt) {
         Context context = getContext();
         if (context != null) {
-            Toast.makeText(context, text, Toast.LENGTH_LONG).show();
+            Toast.makeText(context, mensajeInt, Toast.LENGTH_LONG).show();
         }
     }
 }

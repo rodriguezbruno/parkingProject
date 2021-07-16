@@ -222,7 +222,7 @@ public class ReservationPresenterTest {
     @Test
     public void getParkingWithReservations_success() {
         int parkingSize = 20;
-        when(model.getParking()).thenReturn(new Parking(20));
+        when(model.getParking()).thenReturn(new Parking(parkingSize));
         Assert.assertEquals(parkingSize, presenter.getParkingWithReservations().getParkingSize());
     }
 }
