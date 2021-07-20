@@ -25,7 +25,7 @@
         app:layout_constraintBottom_toTopOf="@id/button_parking_automatic_release"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_parking_add_reservation" />
+        app:layout_constraintTop_toBottomOf="@id/button_parking_add_reservation" />
 
     <Button
         android:id="@+id/button_parking_automatic_release"
@@ -33,13 +33,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="@string/button_parking_automatic_release"
-        app:layout_constraintBottom_toTopOf="@id/reservation_fragment"
+        app:layout_constraintBottom_toTopOf="@id/menu_fragment_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_parking_release" />
 
     <FrameLayout
-        android:id="@+id/reservation_fragment"
+        android:id="@+id/menu_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"

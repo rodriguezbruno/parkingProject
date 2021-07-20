@@ -1,8 +1,8 @@
 <resources>
     <!-- Uses in activity_parking.xml -->
-    <string name="app_name">ParkingProyect</string>
+    <string name="app_name">ParkingProject</string>
     <string name="text_parking_size_text">Parking Size</string>
-    <string name="input_parking_size_hint">Size...</string>
+    <string name="input_parking_size_hint">Size…</string>
     <string name="button_parking_add_size">Add Size</string>
 
     <!-- Uses in activity_system.xml -->
@@ -11,12 +11,16 @@
     <string name="button_parking_automatic_release">Automatic release</string>
 
     <!-- Uses in fragment_reservation.xml -->
-    <string name="text_parking_quantity_text">Parking lots: </string>
+    <string name="text_parking_reservation">Parking reservation: </string>
     <string name="input_parking_lot_number_hint">Lot number</string>
     <string name="input_security_code_hint">Security code</string>
     <string name="date_start_datetime_hint">Start date</string>
     <string name="date_end_datetime_hint">End date</string>
     <string name="button_parking_add_new_reservation_text">Add reservation</string>
+
+    <!-- Uses in release_reservation.xml -->
+    <string name="text_release_reservation">Reservation release: </string>
+    <string name="button_release_add">Release</string>
 
     <!-- Uses in ParkingView.java -->
     <string name="text_parking_add_size_message">Parking lots added: %s</string>
@@ -32,4 +36,10 @@
     <string name="toast_reservation_error_range_dates">Start date is less than the day date or end date is less than start date</string>
     <string name="toast_reservation_added_message">Reservation added successfully </string>
     <string name="toast_reservation_added_error_message">Error we have a reservation for that parking number with same date, choose another date for that parking number</string>
+
+    <!-- Uses in ReleaseView.java -->
+    <string name="toast_reservation_exception_list_empty">Error this parking does not have any reservation yet</string>
+    <string name="toast_release_exception_more_than_one_match">Error we are working on this problem</string>
+    <string name="toast_release_exception_no_match">Error the security code or parking number are invalid, try again</string>
+    <string name="toast_release_success_message">Release successfully</string>
 </resources>

@@ -16,7 +16,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="20dp"
-            android:text="@string/text_parking_quantity_text"
+            android:text="@string/text_parking_reservation"
             android:textSize="24dp"
             app:layout_constraintBottom_toTopOf="@id/start_date_time"
             app:layout_constraintEnd_toEndOf="parent"
